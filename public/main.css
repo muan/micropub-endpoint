@@ -1,0 +1,75 @@
+/* Trying a thing where CSS only target type and default attrs */
+
+body,
+button,
+textarea,
+input {
+  font-size: 1em;
+  font-family: 'Andale Mono', menlo, monospace;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 2em;
+  line-height: 1.7;
+}
+
+a {
+  color: #2023de;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  margin-top: 0
+}
+
+footer,
+header,
+main {
+  width: 100%;
+  max-width: 36em;
+}
+
+label {
+  display: block;
+}
+
+textarea,
+input,
+select {
+  margin: 0.4em 0 0.8em;
+  width: 100%;
+  border: 1px;
+  border-color: silver;
+  border-style: solid;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: auto;
+}
+
+input[type=file] {
+  border: 0;
+}
+
+button {
+  margin-top: 0.4em;
+  padding: 0.4em 0.8em;
+  border-color: seagreen;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  margin: 1.5em 0;
+  border: 0;
+  border-top: 1px solid gray;
+}
