@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 app.get('/micropub', function(req, res) {
   if (req.query.q === 'config') {
     res.send({
-      'media-endpoint': 'https://muan-micropub-content.glitch.me/micropub'
+      'media-endpoint': `https://${req.headers.host}/micropub`
       // syndicate-to
     })
   } else {

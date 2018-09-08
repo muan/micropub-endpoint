@@ -1,7 +1,7 @@
 const fs = require('fs')
 const request = require('request')
-const repo = 'muan/micropub-content'
-const ua = 'muan-micropub-content'
+const repo = process.env.REPO
+const ua = process.env.USER_AGENT
 
 // Returns
 // - Error: {error: {code: number, body: {error: string, error_description: string}} or
@@ -86,7 +86,7 @@ const GitHub = {
       body: {
         path: null,
         message: '🆕 Create an entry via micropub',
-        branch: 'master',
+        branch: 'gh-pages',
         content: null
       }
     }
@@ -123,7 +123,7 @@ const GitHub = {
       }, function (err, res, body) {
         console.log('create', err)
         if (res && res.statusCode === 201) {
-          resolve({code: 201, location: `https://muan.github.io/micropub-content/posts/${filename}`})
+          resolve({code: 201, location: `${process.env.SITEURL}/posts/${filename}`})
         } else {
           resolve(GitHub.errorResponse(res, body))
         }
@@ -142,7 +142,7 @@ const GitHub = {
       }, function (err, res, body) {
         console.log('upload', err)
         if (res && res.statusCode === 201) {
-          resolve({code: 201, location: `https://muan.github.io/micropub-content/assets/${filename}`})
+          resolve({code: 201, location: `${process.env.SITEURL}/assets/${filename}`})
         } else {
           resolve(GitHub.errorResponse(res, body))
         }
