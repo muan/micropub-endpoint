@@ -41,7 +41,7 @@ async function createEntry(body, photo) {
   if (photo) {
     const uploadResult = await GitHub.uploadFile(filename, photo)
     if (uploadResult.location) {
-      body.content = `![](../${uploadResult.location})\n\n${body.content}`
+      body.content = `![](${uploadResult.location})\n\n${body.content}`
     } else {
       return Promise.resolve(uploadResult.error)
     }
