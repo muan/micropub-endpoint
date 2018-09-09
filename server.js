@@ -34,7 +34,6 @@ app.post('/micropub', async function(req, res) {
       console.log(result.error)
       res.status(result.error.code).send(result.error.body)
     } else {
-      console.log(result.location)
       if (result.location) {
         res.header('Location', result.location)
       }
