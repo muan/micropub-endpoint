@@ -8,7 +8,13 @@ Create your own micropub endpoint and Jekyll site in seconds!
 
 1. Create a `hello-express` project on [Glitch](https://glitch.com/).
 2. Import this repository.
-3. Edit `.env` with your info. (repo/site URL of the Jekyll site—)
+3. Add the following to `.env` (modified with the Jekyll site repository and URL information):
+
+   ```
+   REPO='muan/micropub-content'
+   SITEURL='https://muan.github.io/micropub-content'
+   ```
+
 
 ## Jekyll site
 

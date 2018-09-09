@@ -1,7 +1,6 @@
 const fs = require('fs')
 const request = require('request')
 const repo = process.env.REPO
-const ua = process.env.USER_AGENT
 
 // Returns
 // - Error: {error: {code: number, body: {error: string, error_description: string}} or
@@ -81,7 +80,7 @@ const GitHub = {
       json: true,
       headers: {
         Authorization: `token ${GitHub.accessToken}`,
-        'User-Agent': ua
+        'User-Agent': 'micropub-endpoint'
       },
       body: {
         path: null,
