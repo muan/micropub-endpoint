@@ -11,6 +11,10 @@
     "GITHUB_REPOSITORY": {
       "description": "The GitHub repository name for your Jekyll site. For example: \"muan/micropub-content\".",
       "value": ""
+    },
+    "DEFAULT_BRANCH": {
+      "description": "The GitHub Pages branch for your Jekyll site.",
+      "value": "gh-pages"
     }
   }
 }

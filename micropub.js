@@ -85,7 +85,7 @@ const GitHub = {
       body: {
         path: null,
         message: '🆕 Create an entry via micropub',
-        branch: 'gh-pages',
+        branch: process.env.DEFAULT_BRANCH,
         content: null
       }
     }
