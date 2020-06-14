@@ -24,14 +24,13 @@ To publish a post through this implementation of Micropub flow, it requires the 
 3. `Micropub endpoint`[[template]](https://github.com/muan/micropub-endpoint) that handles sending a request to GitHub.
 4. `Micropub client`[[template]](https://github.com/muan/micropub-client) [[hosted]](https://muan-micropub-client.glitch.me/) that handles authenticating and sending a request to the endpoint. There are many other Micropub clients that follow the same spec and can be used  here. For example, [Quill](https://quill.p3k.io/).
 5. `IndieAuth for GitHub` for handling authentication requests between GitHub and Micropub client.
-6. `Micropub content`[[template]](https://github.com/muan/micropub-content), in this case, your GitHub Pages site.
+6. `Micropub content`[[template]](https://github.com/muan/micropub-content) [[demo]](https://muan.github.io/micropub-content/), in this case, your GitHub Pages site.
 
 Out of these 6 items, you would create just 2: the `Mircopub endpoint`, so that you can customize _where_ the post is created and _how_ it is created, and `Mircopub content`, so that you can customize how the GitHub Pages site looks.
 
 Flow:
 
-1. User (you) visits `Micropub client` and log in with your website.
-  - In this example, it should be the `Micropub content` Pages site. But it can be a different website as long as it has [these lines](https://github.com/muan/micropub-content/blob/f558b7124c6de6d3da2b1a83b892590ed6853691/_layouts/default.html#L9-L10).
+1. User (you) visits `Micropub client` and log in with your website. In this example, it should be the `Micropub content` Pages site. But it can be a different website as long as it has [these lines](https://github.com/muan/micropub-content/blob/f558b7124c6de6d3da2b1a83b892590ed6853691/_layouts/default.html#L9-L10).
 2. `Micropub client` sends a GET request to your website to retrieve your preferred auth endpoints.
 3. `Micropub client` redirects you to that endpoint, in this case `IndieAuth for GitHub`, which is a service hosted on Heroku whose sole purpose is to talk to GitHub API and create an access token.
 4. Once an access token is obtained, `Micropub client` presents you with text areas for you to create your blog post with.
