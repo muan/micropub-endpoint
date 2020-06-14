@@ -4,7 +4,7 @@ Used by [`muan/micropub-content`](https://github.com/muan/micropub-content).
 
 Create your own micropub endpoint and Jekyll site in seconds!
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/muan/micropub-endpoint/tree/main)
 
 This server will attempt to create content for a Jekyll site. To create a Jekyll site from a template:
 
