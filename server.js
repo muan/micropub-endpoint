@@ -28,10 +28,8 @@ app.get('/micropub', function(req, res) {
 app.post('/micropub', async function(req, res) {
   const token = (req.headers.authorization && req.headers.authorization.split(' ')[1]) || req.body.access_token
   if (token) {
-    console.log(req.body)
     const result = await micropub(token, req.body, req.files && (req.files.photo || req.files.file))
     if (result.error) {
-      console.log(result.error)
       res.status(result.error.code).send(result.error.body)
     } else {
       if (result.location) {
