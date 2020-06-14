@@ -4,16 +4,7 @@ Used by [`muan/micropub-content`](https://github.com/muan/micropub-content).
 
 Create your own micropub endpoint and Jekyll site in seconds!
 
-## Endpoint
-
-1. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-2. Change the content of `.env` to your Jekyll site repository name and URL:
-
-   ```
-   REPO='muan/micropub-content'
-   SITEURL='https://muan.github.io/micropub-content'
-   ```
-
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Jekyll site
 

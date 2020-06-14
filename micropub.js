@@ -1,13 +1,13 @@
 const fs = require('fs')
 const request = require('request')
-const repo = process.env.REPO
+const repo = process.env.GITHUB_REPOSITORY
 
 // Returns
 // - Error: {error: {code: number, body: {error: string, error_description: string}} or
 // - Success: {code: number, location?: string}
 module.exports = async function(token, body, file) {
   GitHub.accessToken = token
-  
+
   if (body.action === 'delete') {
     return await deleteEntry(body.url)
   } else if (body.action === 'update') {
@@ -19,9 +19,9 @@ module.exports = async function(token, body, file) {
   } else {
     return Promise.resolve({
       error: {
-        code: 501, 
+        code: 501,
         body: {
-          error: 501, 
+          error: 501,
           error_description: `Who knows what's going on? ¯\_(ツ)_/¯`
         }
       }
@@ -31,7 +31,7 @@ module.exports = async function(token, body, file) {
 
 async function createEntry(body, photo) {
   let result
-  
+
   const datetime = new Date().toISOString().split(/:\d\d\./)[0]
   const date = datetime.split('T')[0]
   const title = body.name || datetime
@@ -68,7 +68,7 @@ async function deleteEntry(url) {
 function pathFromLocation(url) {
   const filename = url.split('/')[url.split('/').length - 1]
   return `_posts/${filename.replace(/-\d\d-\d\d$/, '')}-${filename}.md`
-  
+
 }
 
 const GitHub = {
@@ -105,19 +105,19 @@ const GitHub = {
     if (args.sha) {
       options.body.sha = args.sha
     }
-    
+
     request(options, cb)
   },
-  
+
   errorResponse(res, body) {
     return {error: {code: res.statusCode, body: {error: res.statusCode, error_description: body.message}}}
   },
-  
+
   // https://developer.github.com/v3/repos/contents/#create-a-file
   createFile: async function(path, filename, content) {
     return await new Promise(resolve => {
       GitHub.requestWithOptions({
-        path, 
+        path,
         content: Buffer.from(content).toString('base64')
       }, function (err, res, body) {
         console.log('create', err)
@@ -135,7 +135,7 @@ const GitHub = {
     return await new Promise(resolve => {
       filename = `${filename}-${photo.filename}`
       GitHub.requestWithOptions({
-        path: `assets/${filename}`, 
+        path: `assets/${filename}`,
         message: '🖼 Upload a file via micropub',
         content: fs.readFileSync(photo.file).toString('base64')
       }, function (err, res, body) {
@@ -165,7 +165,7 @@ const GitHub = {
       })
     })
   },
-  
+
 
   // https://developer.github.com/v3/repos/contents/#update-a-file
   updateFile: async function(path, content) {
@@ -188,13 +188,13 @@ const GitHub = {
       })
     })
   },
-  
+
   // https://developer.github.com/v3/repos/contents/#delete-a-file
   deleteFile: async function(path) {
     const getResult = await GitHub.getFile(path)
     return await new Promise(resolve => {
       if (getResult.error) resolve(getResult.error)
-      
+
       GitHub.requestWithOptions({
         path,
         sha: getResult.sha,
