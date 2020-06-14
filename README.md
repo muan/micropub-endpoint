@@ -15,7 +15,7 @@ This server will attempt to create content for a Jekyll site. To create a Jekyll
   - `micropub_endpoint`: URL of the Heroku app you just deployed.
   - `url`: GitHub pages URL of the repository you just forked.
 
-And you're done! The Jekyll site might take a minute to build. But then you can head to [https://muan-micropub-client.glitch.me/](https://muan-micropub-client.glitch.me/) and log in with your site URL to create your first post. There is even a `feed.rss` that you can use for [micro.blog](https://micro.blog/).
+And you're done! The Jekyll site might take a minute to build. But then you can head to [https://micropub-client.herokuapp.com/](https://micropub-client.herokuapp.com/) and log in with your site URL to create your first post. There is even a `feed.rss` that you can use for [micro.blog](https://micro.blog/).
 
 ---
 
@@ -26,7 +26,7 @@ To publish a post through this implementation of Micropub flow, it requires the 
 1. `GitHub` as the authentication provider.
 2. `GitHub` and its API for interacting with the repository for your blog content.
 3. `Micropub endpoint`[[template]](https://github.com/muan/micropub-endpoint) that handles sending a request to GitHub.
-4. `Micropub client`[[template]](https://github.com/muan/micropub-client) [[hosted]](https://muan-micropub-client.glitch.me/) that handles authenticating and sending a request to the endpoint. There are many other Micropub clients that follow the same spec and can be used  here. For example, [Quill](https://quill.p3k.io/).
+4. `Micropub client`[[template]](https://github.com/muan/micropub-client) [[hosted]](https://micropub-client.herokuapp.com/) that handles authenticating and sending a request to the endpoint. There are many other Micropub clients that follow the same spec and can be used  here. For example, [Quill](https://quill.p3k.io/).
 5. `IndieAuth for GitHub` for handling authentication requests between GitHub and Micropub client.
 6. `Micropub content`[[template]](https://github.com/muan/micropub-content) [[demo]](https://muan.github.io/micropub-content/), in this case, your GitHub Pages site.
 
