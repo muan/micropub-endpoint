@@ -5,11 +5,11 @@
   "keywords": ["micropub"],
   "env": {
     "SITEURL": {
-      "description": "The GitHub Pages Jekyll site URL.",
+      "description": "The GitHub Pages Jekyll site URL. For example: \"https://muan.github.io/micropub-content\".",
       "value": ""
     },
     "GITHUB_REPOSITORY": {
-      "description": "The GitHub repository name for your Jekyll site.",
+      "description": "The GitHub repository name for your Jekyll site. For example: \"muan/micropub-content\".",
       "value": ""
     }
   }
