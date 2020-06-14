@@ -1,0 +1,6 @@
+{
+  "name": "Micropub endpoint",
+  "description": "A micropub endpoint for a GitHub Pages site.",
+  "repository": "https://github.com/muan/micropub-endpoint",
+  "keywords": ["micropub"]
+}
