@@ -2,20 +2,26 @@
 
 Used by [`muan/micropub-content`](https://github.com/muan/micropub-content).
 
-Create your own micropub endpoint and Jekyll site in seconds!
+## Use
+
+### 1. Micropub server
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/muan/micropub-endpoint/tree/main)
 
-This server will attempt to create content for a Jekyll site. To create a Jekyll site from a template:
+This server will attempt to create content for a Jekyll site.
+
+### 2. Jekyll site
+
+To create a Jekyll site from a template:
 
 1. Fork [`muan/micropub-content`](https://github.com/muan/micropub-content).
 
 2. Edit `_config.yml` with your info.
 
-  - `micropub_endpoint`: URL of the Heroku app you just deployed.
-  - `url`: GitHub pages URL of the repository you just forked.
+  - `micropub_endpoint`: URL of the Heroku app you just deployed, likely `https://[app-name].herokuapp.com`.
+  - `url`: GitHub pages URL of the repository you just forked, likely `https://[github-username].github.io/micropub-content`.
 
-And you're done! The Jekyll site might take a minute to build. But then you can head to [https://micropub-client.herokuapp.com/](https://micropub-client.herokuapp.com/) and log in with your site URL to create your first post. There is even a `feed.rss` that you can use for [micro.blog](https://micro.blog/).
+The Jekyll site might take a minute to build. Once it's built, you can head to [https://micropub-client.herokuapp.com/](https://micropub-client.herokuapp.com/) and log in with your site URL to create your first post. It comes with a `feed.rss` that you can use for [micro.blog](https://micro.blog/).
 
 ---
 
